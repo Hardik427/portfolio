@@ -1,9 +1,8 @@
 import React from 'react';
 
-const About = ({ FadeInSection }) => (
+const About = () => (
   <section id="about" className="py-20 bg-neutral-50">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <FadeInSection>
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">About Me</h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -64,7 +63,6 @@ const About = ({ FadeInSection }) => (
             </div>
           </div>
         </div>
-      </FadeInSection>
     </div>
   </section>
 );

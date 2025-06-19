@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 const Hero = ({ FadeInSection, scrollToSection }) => (
   <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-fuchsia-50 pt-20">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <FadeInSection>
+
         <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
           Hi, I'm <span className="bg-gradient-to-r from-indigo-600 to-fuchsia-500 bg-clip-text text-transparent">
              Hardik Gondwal
@@ -31,14 +31,12 @@ const Hero = ({ FadeInSection, scrollToSection }) => (
             Get In Touch
           </button>
         </div>
-      </FadeInSection>
-      <FadeInSection className="mt-16">
+
         <ChevronDown 
           className="mx-auto animate-bounce text-indigo-400 cursor-pointer" 
           size={32}
           onClick={() => scrollToSection('about')}
         />
-      </FadeInSection>
     </div>
   </section>
 );

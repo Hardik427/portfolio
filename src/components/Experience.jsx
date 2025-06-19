@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Award, Calendar } from 'lucide-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Experience = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }, []);
+
   const experiences = [
     {
       type: "Hackathon",
@@ -29,12 +38,16 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">Experience & Achievements</h2>
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16" data-aos="fade-down">
+            Experience & Achievements
+          </h2>
           <div className="space-y-8">
             {experiences.map((exp, index) => (
               <div 
                 key={index}
                 className="bg-gradient-to-br from-white via-indigo-50 to-fuchsia-50 rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div className="flex items-center mb-2 md:mb-0">
@@ -53,7 +66,6 @@ const Experience = () => {
               </div>
             ))}
           </div>
-
       </div>
     </section>
   );

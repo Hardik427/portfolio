@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-const About = () => (
-  <section id="about" className="py-20 bg-neutral-50">
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">About Me</h2>
+const About = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }, []);
+
+  return (
+    <section id="about" className="py-20 bg-neutral-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-center text-gray-900 mb-16" data-aos="fade-down">About Me</h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div data-aos="fade-right">
             <h3 className="text-2xl font-semibold text-indigo-600 mb-6">Education & Background</h3>
             <p className="text-gray-700 mb-6 leading-relaxed">
               I'm a Computer Science undergraduate at Sardar Vallabhbhai National Institute of Technology, Surat, 
@@ -37,7 +47,7 @@ const About = () => (
               </li>
             </ul>
           </div>
-          <div className="bg-gradient-to-br from-indigo-50 to-fuchsia-50 p-8 rounded-2xl">
+          <div className="bg-gradient-to-br from-indigo-50 to-fuchsia-50 p-8 rounded-2xl" data-aos="fade-left">
             <h4 className="text-lg font-semibold text-indigo-600 mb-6">Tech Stack</h4>
             <div className="space-y-4">
               <div>
@@ -63,8 +73,9 @@ const About = () => (
             </div>
           </div>
         </div>
-    </div>
-  </section>
-);
+      </div>
+    </section>
+  );
+};
 
 export default About;

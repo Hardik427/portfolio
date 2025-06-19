@@ -39,28 +39,7 @@ const App = () => {
   };
 
   // FadeInSection utility
-  const FadeInSection = ({ children, className = "" }) => {
-    const [isVisible, setIsVisible] = useState(false);
-    const ref = React.useRef();
-    useEffect(() => {
-      const observer = new window.IntersectionObserver(
-        ([entry]) => entry.isIntersecting && setIsVisible(true),
-        { threshold: 0.1 }
-      );
-      if (ref.current) observer.observe(ref.current);
-      return () => ref.current && observer.unobserve(ref.current);
-    }, []);
-    return (
-      <div
-        ref={ref}
-        className={`transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        } ${className}`}
-      >
-        {children}
-      </div>
-    );
-  };
+  
 
   return (
     <div className="min-h-screen bg-neutral-50 overflow-x-hidden">
@@ -70,12 +49,12 @@ const App = () => {
         activeSection={activeSection}
         scrollToSection={scrollToSection}
       />
-      <Hero FadeInSection={FadeInSection} scrollToSection={scrollToSection} />
-      <About FadeInSection={FadeInSection} />
-      <Projects FadeInSection={FadeInSection} />
-      <Skills FadeInSection={FadeInSection} />
-      <Experience FadeInSection={FadeInSection} />
-      <Contact FadeInSection={FadeInSection} />
+      <Hero scrollToSection={scrollToSection} />
+      <About />
+      <Projects  />
+      <Skills  />
+      <Experience  />
+      <Contact  />
       <Footer />
     </div>
   );

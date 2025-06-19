@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Github, Linkedin } from 'lucide-react';
 
-const Contact = ({ FadeInSection }) => {
+const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,7 +26,7 @@ const Contact = ({ FadeInSection }) => {
   return (
     <section id="contact" className="py-20 bg-neutral-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeInSection>
+  
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">Get In Touch</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
@@ -127,7 +127,6 @@ const Contact = ({ FadeInSection }) => {
               </div>
             </div>
           </div>
-        </FadeInSection>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Code, Server, Database, Brain } from 'lucide-react';
 
-const Skills = ({ FadeInSection }) => {
+const Skills = () => {
     const skillCategories = [
     {
       title: "Programming Languages",
@@ -38,7 +38,6 @@ const Skills = ({ FadeInSection }) => {
   return (
     <section id="skills" className="py-20 bg-neutral-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeInSection>
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             Skills & Technologies
           </h2>
@@ -67,7 +66,6 @@ const Skills = ({ FadeInSection }) => {
               </div>
             ))}
           </div>
-        </FadeInSection>
       </div>
     </section>
   );

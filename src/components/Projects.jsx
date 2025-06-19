@@ -1,7 +1,7 @@
 import React from 'react';
 import { Github, ExternalLink, Code } from 'lucide-react';
 
-const Projects = ({ FadeInSection }) => {
+const Projects = () => {
   const projects = [
   {
     title: "Ecommerce-Website",
@@ -57,7 +57,7 @@ const Projects = ({ FadeInSection }) => {
   return (
     <section id="projects" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeInSection>
+
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">Featured Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
@@ -111,7 +111,6 @@ const Projects = ({ FadeInSection }) => {
               </div>
             ))}
           </div>
-        </FadeInSection>
       </div>
     </section>
   );

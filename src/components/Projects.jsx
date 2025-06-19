@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Github, ExternalLink, Code } from 'lucide-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Projects = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }, []);
+
   const projects = [
   {
     title: "Ecommerce-Website",
@@ -57,13 +66,19 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">Featured Projects</h2>
+          <h2 
+            className="text-4xl font-bold text-center text-gray-900 mb-16"
+            data-aos="fade-down"
+          >
+            Featured Projects
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div 
                 key={index}
                 className="bg-gradient-to-br from-white via-indigo-50 to-fuchsia-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">

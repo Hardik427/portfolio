@@ -1,7 +1,7 @@
 import React from 'react';
 import { Award, Calendar } from 'lucide-react';
 
-const Experience = ({ FadeInSection }) => {
+const Experience = () => {
   const experiences = [
     {
       type: "Hackathon",
@@ -29,7 +29,6 @@ const Experience = ({ FadeInSection }) => {
   return (
     <section id="experience" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeInSection>
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">Experience & Achievements</h2>
           <div className="space-y-8">
             {experiences.map((exp, index) => (
@@ -54,7 +53,7 @@ const Experience = ({ FadeInSection }) => {
               </div>
             ))}
           </div>
-        </FadeInSection>
+
       </div>
     </section>
   );

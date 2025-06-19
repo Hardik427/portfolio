@@ -1,7 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, MapPin, Github, Linkedin } from 'lucide-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Contact = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,10 +35,9 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-neutral-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-  
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">Get In Touch</h2>
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16" data-aos="fade-down">Get In Touch</h2>
           <div className="grid md:grid-cols-2 gap-12">
-            <div>
+            <div data-aos="fade-right">
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">Let's Connect!</h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
                 I'm always interested in new opportunities, collaborations, and exciting projects. 
@@ -70,7 +78,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-white via-indigo-50 to-fuchsia-50 p-8 rounded-2xl">
+            <div className="bg-gradient-to-br from-white via-indigo-50 to-fuchsia-50 p-8 rounded-2xl" data-aos="fade-left">
               <div className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
